@@ -6,14 +6,11 @@ use NeoPHP\web\controller\WebController;
 
 class PortalController extends WebController
 { 
-    public function showLoginAction ()
+    public function showLoginAction ($showLoginError=false)
     {
-        $this->getView('portal/login')->render();
-    }
-    
-    public function loginAction ()
-    {
-        
+        $loginView = $this->getView('portal/login');
+        $loginView->setShowLoginError($showLoginError);
+        $loginView->render();
     }
 }
 
