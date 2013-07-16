@@ -3,6 +3,7 @@
 namespace Blueshark\controllers;
 
 use NeoPHP\web\controller\WebController;
+use Exception;
 
 class SiteController extends WebController
 {   
@@ -31,21 +32,25 @@ class SiteController extends WebController
         }
         else
         {
-            $connection = $this->getConnection("production");
-            $doUser = $connection->getDataObject("User");
-            $doUser->addWhereCondition ('username="' . $userName . '"');
-            $doUser->addWhereCondition ('password="' . $password . '"');
-            if ($doUser->find(true))
+            try
             {
-                $this->getSession()->start();
-                $this->getSession()->sessionId = session_id();
-                $this->getSession()->sessionName = session_name();
-                $this->getSession()->userName = $doUser->username;
-                $this->getSession()->firstName = $doUser->firstname;
-                $this->getSession()->lastName = $doUser->lastname;
-                $this->getSession()->clientId = $doUser->clientid;
-                $this->getSession()->profileId = $doUser->profileid;
+                $connection = $this->getDatabase("production");
+                $doUser = $connection->getDataObject("User");
+                $doUser->addWhereCondition ('username="' . $userName . '"');
+                $doUser->addWhereCondition ('password="' . $password . '"');
+                if ($doUser->find(true))
+                {
+                    $this->getSession()->start();
+                    $this->getSession()->sessionId = session_id();
+                    $this->getSession()->sessionName = session_name();
+                    $this->getSession()->userName = $doUser->username;
+                    $this->getSession()->firstName = $doUser->firstname;
+                    $this->getSession()->lastName = $doUser->lastname;
+                    $this->getSession()->clientId = $doUser->clientid;
+                    $this->getSession()->profileId = $doUser->profileid;
+                }
             }
+            catch (Exception $ex) {}
         }
         
         if ($this->getSession()->isStarted())

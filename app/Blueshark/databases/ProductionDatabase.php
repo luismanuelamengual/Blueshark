@@ -1,11 +1,11 @@
 <?php
 
-namespace Blueshark\connections;
+namespace Blueshark\databases;
 
-use NeoPHP\core\data\Connection;
+use NeoPHP\core\data\Database;
 use \PDO;
 
-class ProductionConnection extends Connection
+class ProductionDatabase extends Database
 {
     public function getDsn ()
     {
