@@ -25,8 +25,8 @@ class SiteController extends WebController
             $this->getSession()->sessionId = session_id();
             $this->getSession()->sessionName = session_name();
             $this->getSession()->userName = "Demo";
-            $this->getSession()->firstName = "demo";
-            $this->getSession()->lastName = "demo";
+            $this->getSession()->firstName = "Luis";
+            $this->getSession()->lastName = "Amengual";
             $this->getSession()->clientId = 1;
             $this->getSession()->profileId = 1;
         }
