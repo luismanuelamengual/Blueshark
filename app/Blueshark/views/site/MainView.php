@@ -1,9 +1,9 @@
 <?php
 
-namespace Blueshark\views;
+namespace Blueshark\views\site;
 
 use NeoPHP\web\view\HTMLView;
-use NeoPHP\widget\html\RawHTMLElement;
+use NeoPHP\widget\html\Tag;
 
 abstract class MainView extends HTMLView
 {

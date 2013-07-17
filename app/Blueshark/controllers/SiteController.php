@@ -68,6 +68,11 @@ class SiteController extends WebController
         $this->getSession()->destroy();
         $this->redirectAction('portal/showLogin');
     }
+    
+    public function showHomeAction ()
+    {
+        $this->getView("site/home")->render();
+    }
 }
 
 ?>
