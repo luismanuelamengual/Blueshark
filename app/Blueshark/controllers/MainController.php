@@ -13,6 +13,14 @@ class MainController extends Controller
             throw new Exception ("Se necesita la variable session.use_cookies = 1 en el archivo de configuración de php");
         $this->executeAction("portal/showLogin");
     }
+    
+    public function errorAction ($error)
+    {
+        echo "<pre>";
+        echo "Error: " . $error->getMessage() . "<br><br>";
+        print_r($error->getTraceAsString());
+        echo "</pre>";
+    }
 }
 
 ?>
