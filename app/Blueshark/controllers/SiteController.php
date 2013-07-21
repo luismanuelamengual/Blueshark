@@ -66,7 +66,7 @@ class SiteController extends WebController
     public function logoutAction ()
     {
         $this->getSession()->destroy();
-        $this->redirectAction('portal/showLogin');
+        $this->redirectAction();
     }
     
     public function showHomeAction ()
