@@ -11,7 +11,7 @@ class SiteController extends WebController
     {
         $executeAction = ($action == "login" || ($this->getSession()->isStarted() && isset($this->getSession()->sessionId)));
         if (!$executeAction)
-            $this->redirectAction("portal/showLogin");
+            $this->redirectAction("portal/showHome");
         return $executeAction;
     }
     
@@ -59,7 +59,7 @@ class SiteController extends WebController
         }
         else
         {
-            $this->redirectAction('portal/showLogin', array("showLoginError"=>true));
+            $this->redirectAction('portal/showHome');
         }
     }
     

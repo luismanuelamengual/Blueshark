@@ -6,9 +6,9 @@ use NeoPHP\web\WebApplication as CoreWebApplication;
 
 class WebApplication extends CoreWebApplication
 {
-    public function initialize ()
+    public function __construct ()
     {
-        $this->getSettings()->title = "Blueshark";
+        parent::__construct("Blueshark");
     }
 }
 

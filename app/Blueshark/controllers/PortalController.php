@@ -12,11 +12,10 @@ class PortalController extends WebController
         return true;
     }
     
-    public function showLoginAction ($showLoginError=false)
+    public function showHomeAction ()
     {
-        $loginView = $this->getView('portal/login');
-        $loginView->setShowLoginError($showLoginError);
-        $loginView->render();
+        $homeView = $this->getView('portal/home');
+        $homeView->render();
     }
 }
 
