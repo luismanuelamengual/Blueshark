@@ -12,15 +12,15 @@ class HomeView extends MainView
     protected function createNavBar ()
     {   
         return '
-        <div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav">
+        <div class="navbar navbar-fixed-top">
             <div class="container">
                 <a href="../" class="navbar-brand">Blueshark</a>
-                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
-                <div class="nav-collapse collapse bs-navbar-collapse">
+                <div class="nav-collapse collapse">
                     <ul class="nav navbar-nav pull-right">
                         <li class="dropdown">            
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-user"></i> ' . $this->getSession()->firstName . ' ' . $this->getSession()->lastName . ' <b class="caret"></b></a>
@@ -31,7 +31,7 @@ class HomeView extends MainView
                             </ul>
                         </li>
                     </ul>
-                 </div>
+                </div>
             </div>
         </div>';
     }
