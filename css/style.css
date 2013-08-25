@@ -3,3 +3,10 @@ body
     position: relative; 
     padding-top: 50px; 
 }
+
+.jumbotron 
+{
+    background-image: url('img/back2.png');
+    background-repeat: repeat;
+    margin-top: 19px;
+}
